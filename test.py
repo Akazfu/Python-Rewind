@@ -21,15 +21,12 @@ print(my_dice.dice1, my_dice.dice2)
 print(my_dice.roll())
 print(type(my_dice.roll())) """
 
-# Absolute path
 
-
-# Relative path
-# path1 = Path("aa")
-# if path1.exists():
-#     path1.mkdir()
-# else:
-#     Path("cc").mkdir()
+""" path1 = Path("aa")
+if path1.exists():
+    path1.mkdir()
+else:
+    Path("cc").mkdir()
 path = Path()
 for file in path.glob('*.*'):
-    print(file)
+    print(file) """
