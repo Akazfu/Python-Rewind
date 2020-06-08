@@ -7,5 +7,3 @@ def find_max(numbers):
         if number > max_num:
             max_num = number
     return max_num
-
-
