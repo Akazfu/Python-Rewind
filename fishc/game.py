@@ -3,14 +3,18 @@
 import random
 
 seed = random.getstate()
-target = random.randint(1,9)
+target = random.randint(1, 9)
 i = 0
-with open('seed.txt','w') as f:
-      f.write(str(seed))
+with open('seed.txt', 'w') as f:
+    f.write(str(seed))
 
 while i < 3:
-    temp = input('1-9哪个数字？')
-    guess = int(temp)
+    try:
+        temp = input('1-9哪个数字？')
+        guess = int(temp)
+    except (ValueError, KeyboardInterrupt, EOFError) as reason:
+        print('\n出错了！ '+str(reason))
+        break
     if guess == target:
         print('对了。')
         break
@@ -21,4 +25,5 @@ while i < 3:
         print('大了')
         print(f'还剩下{2-i}次机会')
     i += 1
-print('游戏结束了。')
+else:
+    print('游戏结束了。')

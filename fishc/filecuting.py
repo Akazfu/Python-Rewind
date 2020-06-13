@@ -1,3 +1,5 @@
+import pickle
+
 def filecuting(filename):
     f = open(filename, 'a+')
     f.write('========')
@@ -16,8 +18,12 @@ def filecuting(filename):
         else:
             fa = open(f'a{str(count)}.txt', 'w')
             fb = open(f'b{str(count)}.txt', 'w')
+            fa_pickle = open(f'a{str(count)}.pickle', 'wb')
+            fb_pickle = open(f'b{str(count)}.pickle', 'wb')
             fa.writelines(atalks)
             fb.writelines(btalks)
+            pickle.dump(btalks, fa_pickle)
+            pickle.dump(atalks, fb_pickle)
             fa.close()
             fb.close()
             atalks.clear()
