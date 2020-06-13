@@ -1,16 +1,20 @@
 class Matrix:
-    length = 0
-    width = 0
+    
+    def __init__(self, l=0, w=0):
+        self.__length = l
+        self.__width = w
 
     def setRect(self, x, y):
-        self.length = x
-        self.width = y
+        self.__length = x
+        self.__width = y
 
     def getRect(self):
-        return self.length, self.width
+        return self.__length, self.__width
 
     def getArea(self):
-        return self.length * self.width
-# x = Matrix()
-# x.setRect(5, 6)
-# print(x.getArea())
+        return self.__length * self.__width
+x = Matrix()
+# print(x.__length)
+print(x.getArea())
+x.setRect(5, 6)
+print(x.getArea())
