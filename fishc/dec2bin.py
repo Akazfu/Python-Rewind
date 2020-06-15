@@ -2,13 +2,14 @@ def Dec2Bin(dec):
     dec = int(dec)
     list1 = []
     while dec:
-        remainder = dec % 2 
+        remainder = dec % 2
         divident = dec // 2
         dec = divident
         list1.append(str(remainder))
     list1.reverse()
     binary_code = ''.join(list1)
     return binary_code
+
 
 a = input()
 print(Dec2Bin(a))
@@ -20,6 +21,6 @@ print(Dec2Bin(a))
 #         temp += str(n%2)
 #         return temp
 #     else:
-#         return temp        
+#         return temp
 # num = int(input('请输入一个十进制数：'))
 # print(num,'-->',Bin(num))
