@@ -1,5 +1,6 @@
 import time
 
+
 def fabo(x):
     if x <= 2:
         return 1
@@ -24,14 +25,14 @@ def fabo_loop(x):
 while 1:
     x = input('input a number: ')
 
-    start_time = time.time()   
+    start_time = time.time()
     print(fabo(int(x)))
-    end_time = time.time()             
-    run_time = end_time - start_time   
+    end_time = time.time()
+    run_time = end_time - start_time
     print('run_time: ', run_time)
 
     start_time = time.time()
     print(fabo_loop(int(x)))
-    end_time = time.time()             
-    run_time = end_time - start_time   
+    end_time = time.time()
+    run_time = end_time - start_time
     print('run_time: ', run_time)
