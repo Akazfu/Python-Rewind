@@ -14,7 +14,7 @@ def intminsum(array1, array2, k):
         for j in range(len1):
             combo_list.append(list1[j])
             combo_list.append(list2[i])
-
+    print(quo, mod)
     for i in range(mod+1):
         combo_list.append(list1[i])
         combo_list.append(list2[quo])
@@ -24,7 +24,7 @@ def intminsum(array1, array2, k):
     print(result)
 
 
-array1 = '6 1 2 3 4 5 6'
-array2 = '3 7 8 9'
-k = '10'
+array1 = '9 1 2 3 4 5 6 7 8 9'
+array2 = '3 1 2 3'
+k = '20'
 intminsum(array1, array2, k)
