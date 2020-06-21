@@ -1,14 +1,11 @@
 import sys
 list_input = sys.stdin.readline().split()
 n, e = map(int, list_input)
-instruction, graph = [], []
+instruction, graph = [], [[i, 0] for i in range(e)]
 current, area = 0, 0
 
 for i in range(n):
     instruction.append(sys.stdin.readline().split())
-
-for i in range(e):
-    graph.append([i, 0])
 
 for i in range(e):
     for j in instruction:

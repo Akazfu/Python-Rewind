@@ -1,22 +1,18 @@
-def circlecount(m):
-    m = int(m)
-    people = [str(i) for i in range(1, 101)]
-    count = 0
-    index = -1
-    while len(people) >= m:
-        count += 1
-        if count == m:
-            people.pop(0)
-            count = 0
-        else:
-            people.append(people.pop(0))
+m = 4
+list_ = [i for i in range(1, 101)]
+count = 1
 
-    people.sort()
-    for i in range(len(people)-1):
-        people[i] = people[i] + ','
-    result = ''.join(people)
-    print(result)
-
-
-m = 3
-circlecount(m)
+if m < 1 or m > 100:
+    print('ERROR!')
+else:
+    while len(list_) >= m:
+        for i in list_:
+            if count == m:
+                list_.pop(0)
+                count = 1
+            else:
+                list_.append(list_.pop(0))
+                count += 1
+list_.sort()
+list_ = [str(i) for i in list_]
+print(','.join(list_))

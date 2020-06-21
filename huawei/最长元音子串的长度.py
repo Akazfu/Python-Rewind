@@ -1,20 +1,16 @@
-def findvowel(input_str):
-    vowel = set('aeiouAEIOU')
-    longest_str = ''
-    current_str = ''
-    input_str += '#'
-    for cha in input_str:
-        if cha in vowel:
-            current_str += cha
-        else:
-            if len(current_str) > len(longest_str):
-                longest_str = current_str
-            current_str = ''
-    if longest_str != '':
-        print(len(longest_str))
+input_str = 'asdbuiodevauufgh'
+vowel = set('aeiouAEIOU')
+longest = 0
+current = 0
+input_str += '$'
+for cha in input_str:
+    if cha in vowel:
+        current += 1
     else:
-        print(0)
-
-
-input_str = 'asdbuioAEdevauufgh'
-findvowel(input_str)
+        if current > longest:
+            longest = current
+        current = 0
+if longest != 0:
+    print(longest)
+else:
+    print(0)

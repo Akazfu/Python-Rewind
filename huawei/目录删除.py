@@ -1,28 +1,27 @@
-# -*- coding:utf-8 -*-
 class Dir(object):
     def __init__(self, id):
         self.id = id
         self.child = []
         self.parent = None
-
-
 # 检测指定id的dir是否已在列表中，如果是的话返回该对象，否则返回空
+
+
 def get_dir(dirs, id):
     for dir in dirs:
         if dir.id == id:
             return dir
     return None
-
-
 # 获取根节点（没有父亲的节点）
+
+
 def get_root(dirs):
     for dir in dirs:
         if dir.parent is None:
             return dir
     return None
-
-
 # 根据id删除结点的子节点（不必是直接子节点）
+
+
 def delete_child(dir, child_id):
     child = get_dir(dir.child, child_id)
     if child is None:
@@ -30,9 +29,9 @@ def delete_child(dir, child_id):
             delete_child(d, child_id)
     else:
         dir.child.remove(child)
-
-
 # 把输入的列表数据变成树结构
+
+
 def generate_tree(ids):
     dirs = []
     for id in ids:
@@ -49,9 +48,9 @@ def generate_tree(ids):
         pdir.child.append(cdir)
         cdir.parent = pdir
     return dirs
-
-
 # 获取子id列表
+
+
 def get_child_id_list(dir, child_id_list):
     child_id_list.append(dir.id)
     if len(dir.child) != 0:
@@ -76,4 +75,5 @@ if __name__ == '__main__':
     child_ids = []
     get_child_id_list(root, child_ids)
     child_ids.sort()
+    child_ids.remove(0)
     print(child_ids)
