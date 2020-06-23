@@ -1,4 +1,4 @@
-from stack import Stack
+from datastructures import Stack
 
 prec = {'*': 3, '/': 3, '+': 2, '-': 2, '(': 1}
 
@@ -49,4 +49,4 @@ if __name__ == "__main__":
         print('Postfix expression is: ', end='')
         postfixexpr = infix2postfix(infixexpr)
         print(postfixexpr)
-        print('result is ', evalpostfix('postfixexpr'))
+        print('result is ', evalpostfix(postfixexpr))
